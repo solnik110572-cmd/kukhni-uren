@@ -113,6 +113,7 @@ function renderSummary(payload) {
           
 '<span style="color:#238447;font-weight:700;">' +
   escapeHtml(fieldNames[key] || key) +
+
 ':</span> ' +
 '<span style="color:#222;">' + escapeHtml(value) + '</span>'
 
