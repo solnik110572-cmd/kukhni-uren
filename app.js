@@ -110,10 +110,12 @@ function renderSummary(payload) {
       .filter(([key]) => key !== 'consent')
       .map(([key, value]) =>
         '<div style="padding:10px 0;border-bottom:1px solid #e5e7eb;">' +
-          '<div style="color:#238447;font-weight:700;margin-bottom:5px;">' +
-            escapeHtml(fieldNames[key] || key) +
-          '</div>' +
-          '<div>' + escapeHtml(value) + '</div>' +
+          
+'<span style="color:#238447;font-weight:700;">' +
+  escapeHtml(fieldNames[key] || key) +
+':</span> ' +
+'<span style="color:#222;">' + escapeHtml(value) + '</span>'
+
         '</div>'
       ).join('') +
     '</div>';
