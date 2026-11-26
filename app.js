@@ -103,6 +103,7 @@ const fieldNames = {
   contactMethod: 'Способ связи'
 };
 
+
 function renderSummary(payload) {
   return '<div class="summary">' +
     '<h3>Ваши ответы</h3>' +
@@ -110,15 +111,12 @@ function renderSummary(payload) {
       .filter(([key]) => key !== 'consent')
       .map(([key, value]) =>
         '<div style="padding:10px 0;border-bottom:1px solid #e5e7eb;">' +
-          
-'<span style="color:#238447;font-weight:700;">' +
-  escapeHtml(fieldNames[key] || key) +
-
+        '<span style="display:inline;color:#238447;font-weight:700;">' +
+        escapeHtml(fieldNames[key] || key) +
         ':</span> ' +
-'<span style="color:#222;">' + escapeHtml(value) + '</span>' +
-
-
-        '</div>' +
+        '<span style="display:inline;color:#222;">' +
+        escapeHtml(value) +
+        '</span></div>'
       ).join('') +
     '</div>';
 }
